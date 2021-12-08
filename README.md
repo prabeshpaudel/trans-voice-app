@@ -7,7 +7,13 @@ Start by running the flask server first.
 
 ```
 cd flask-server
+python3 -m venv venv
 source venv/bin/activate
+
+cd classifier
+
+pip3 install requirements.txt
+
 python3 server.py
 ```
 
