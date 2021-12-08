@@ -1,0 +1,4 @@
+node_modules
+flask-server/classifier/recordings
+flask-server/venv
+flask-server/classifier/data
