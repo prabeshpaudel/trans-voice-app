@@ -66,7 +66,8 @@ function HomeScreen({ navigation }) {
   // For the Image
   //------------------------------------------
   const [imageUri, setImageUri] = useState( 
-    'https://media.npr.org/assets/img/2021/08/11/gettyimages-1279899488_wide-f3860ceb0ef19643c335cb34df3fa1de166e2761-s1100-c50.jpg'
+    //'https://media.npr.org/assets/img/2021/08/11/gettyimages-1279899488_wide-f3860ceb0ef19643c335cb34df3fa1de166e2761-s1100-c50.jpg'
+    null
   );
 
   const displayResult = async () => {
@@ -161,6 +162,7 @@ function HomeScreen({ navigation }) {
         console.log(test["result"])
         setText(test["result"]);
         setImageUri(test["url"])
+        setAnalysisText(" ")
         // setTempUrl(test["url"])
         //console.log(text)
       } catch (err) {
@@ -211,7 +213,7 @@ function HomeScreen({ navigation }) {
         source={require('./assets/images/background.png')}
         style={styles.image}
         />
-        <Text style= {{margin: 0, fontSize: 24, fontWeight: 'bold', textAlign: 'center', color: 'green'}}> Welcome! </Text>
+        {/* <Text style= {{margin: 0, fontSize: 24, fontWeight: 'bold', textAlign: 'center', color: 'green'}}> Welcome! </Text> */}
 
       <CustomButton 
           text ='Go to Exercise' 
@@ -267,6 +269,10 @@ function HomeScreen({ navigation }) {
         style = {{
           marginTop: 20,
           fontSize: 16,
+          color: 'white', 
+          textAlign: 'center',
+          marginLeft: 10,
+          marginRight: 10,
         }}> 
         {analysisText} 
         </Text>
@@ -412,9 +418,10 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   image: {
-    width: '102%',
+    // flex: 1,
+    width: '100%',
     height: '100%',
-    resizeMode: 'cover',
+    resizeMode: 'stretch',
     position: 'absolute',
   },
 });
